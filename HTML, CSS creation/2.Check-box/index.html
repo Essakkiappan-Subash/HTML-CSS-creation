@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox color changes - using before and after</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: sans-serif;
+            background-color: #3c3c3c;
+        }
+
+        .container{
+            max-width: 1170px;
+            margin: 250px auto 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        label{
+            padding-left: 30px;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .checkbox{
+            appearance: none;
+        }
+
+        .checkbox_1 > label::after{
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+            top: -3px;
+            left: 0;
+            border: 1px solid #ff3232;
+            border-radius: 3px;
+            transition: .3s;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: -600%;
+            background-image: url(./images/Vector.svg);
+        }
+
+        .checkbox_1 > input:checked + label::after{
+            background-image: url(./images/Vector.svg);
+            background-color: #ff3232;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 15px 5px #ff3232;
+            transition: .3s;
+        }
+
+        .checkbox_2 > label::after{
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+            top: -3px;
+            left: 0;
+            border: 1px solid #ff1794;
+            border-radius: 3px;
+            transition: .3s;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: -600%;
+            background-image: url(./images/Vector.svg);
+        }
+
+        .checkbox_2 > input:checked + label::after{
+            background-image: url(./images/Vector.svg);
+            background-color: #ff1794;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 15px 5px #ff1794;
+            transition: .3s;
+        }
+
+        .checkbox_3 > label::after{
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+            top: -3px;
+            left: 0;
+            border: 1px solid #17acff;
+            border-radius: 3px;
+            transition: .3s;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: -600%;
+            background-image: url(./images/Vector.svg);
+        }
+
+        .checkbox_3 > input:checked + label::after{
+            background-image: url(./images/Vector.svg);
+            background-color: #17acff;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 15px 5px #17acff;
+            transition: .3s;
+        }
+
+        @media screen and (max-width: 500px) {
+            .container{
+                width: 100%;
+                margin: 300px auto 0;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .checkbox_1,
+            .checkbox_2,
+            .checkbox_3{
+                margin: 20px auto;
+                align-items: center;
+            }
+        }
+
+        /* */
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="checkbox_1">
+            <input type="checkbox" class="checkbox" name="" id="checkbox_1">
+            <label for="checkbox_1">CHECK BOX 1</label>
+        </div>
+        <div class="checkbox_2">
+            <input type="checkbox" class="checkbox" name="" id="checkbox_2">
+            <label for="checkbox_2">CHECK BOX 2</label>
+        </div>
+        <div class="checkbox_3">
+            <input type="checkbox" class="checkbox" name="" id="checkbox_3">
+            <label for="checkbox_3">CHECK BOX 3</label>
+        </div>
+    </div>
+    
+</body>
+</html>
